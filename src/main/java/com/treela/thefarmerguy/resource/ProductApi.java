@@ -90,7 +90,14 @@ public class ProductApi {
             @RequestParam(value="page", defaultValue="0")long page,
             @RequestParam(value="limit", defaultValue="10")long limit) {
         long offset = page * limit;
+        System.out.println("**************" + text);
         return productRepo.search(language, text, offset, limit);
+    }
+    @PostMapping(path="/test")
+    public String test(
+            @RequestParam(value="text", defaultValue=".*")String text) {
+        System.out.println("**************" + text);
+        return text;
     }
     @PostMapping(path="/getSingleById")
     public List<Map<String, Object>> getSingleById(
