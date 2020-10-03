@@ -9,4 +9,5 @@ import org.springframework.data.repository.CrudRepository;
 public interface OTPRepository extends CrudRepository<OTP, Integer> {
     public OTP findById(long key);
     public boolean existsByIdAndCodeAndOtpAndPhoneno(long id, String code, int otp, long phoneno);
+    public boolean existsByIdAndCodeAndPhoneno(long id, String code, long phoneno);
 }
